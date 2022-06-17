@@ -1,0 +1,285 @@
+/*******************************GERAL**********************************/
+
+:root {
+  --primary-color: hsl(0, 0%, 4%);
+  --light-black-color: hsl(0, 0%, 8%);
+  --dark-grey-color: hsl(0, 0%, 16%);
+  --platinum-color: hsl(0, 0%, 90%);
+  --light-platinum-color: hsl(0, 0%, 98%);
+  --background-color: hsl(0, 0%, 95%);
+
+  font-size: 62.5%;
+
+  --nav-height: 5.2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: 'DM Sans';
+  font-size: 1.6rem; /*16px*/
+
+  text-align: center;
+
+  background-color: var(--background-color);
+}
+
+.wrapper {
+  width: min(50rem, 100%);
+  margin-inline: auto;
+  padding-inline: 2.4rem;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+a.button {
+  border: 1px;
+  border-radius: 1.5rem;
+  padding: 1.4rem;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+section header h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
+  color: var(--primary-color);
+
+  text-transform: uppercase;
+
+  margin-bottom: 1.6rem;
+}
+
+section header h2 {
+  font-size: 3rem;
+  line-height: 3.9rem;
+  color: var(--headline);
+}
+
+section header h1 {
+  font-size: 3.4rem;
+  color: var(--headline);
+  line-height: 130%;
+
+  margin-bottom: 2.4rem;
+}
+
+section .content p {
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 150%;
+}
+
+/*******************************NAVIGATION*****************************/
+
+nav {
+  background-color: var(--dark-grey-color);
+  display: flex;
+
+  height: var(--nav-height);
+
+  position: fixed;
+  top: 0;
+  width: 100vw;
+
+  z-index: 100;
+}
+
+nav .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+nav .menu,
+nav .close-menu {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+}
+
+nav .open-menu svg path {
+  stroke: white;
+}
+
+/*******************************MENU-EXPANDED*****************************/
+body.menu-expanded {
+  overflow: hidden; /*tira a rolagem da pag*/
+}
+
+body.menu-expanded > *:not(nav) {
+  visibility: hidden;
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .close-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.menu-expanded .open-menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.menu-expanded .close-menu {
+  position: relative;
+}
+
+body.menu-expanded .close-menu,
+body.menu-expanded .logo {
+  z-index: 100;
+}
+
+body.menu-expanded .menu {
+  top: 0;
+  left: 0;
+
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--dark-grey-color);
+
+  padding-top: var(--nav-height);
+}
+
+.menu ul:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+
+  margin-top: 6rem;
+
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.1rem;
+}
+
+body.menu-expanded button svg path {
+  stroke: white;
+}
+
+body.menu-expanded a.button {
+  margin-top: 4rem;
+  background-color: hsl(0deg 1% 24%);
+}
+
+/*******************************ABOUT*****************************/
+
+#about {
+  padding-block: 0;
+  padding-top: calc(4.1rem + var(--nav-height));
+}
+
+#about::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(76%);
+
+  background-color: var(--platinum-color);
+}
+#about p {
+  padding-block: 2rem;
+}
+
+#about img {
+  border-radius: 50%;
+  width: 30rem;
+  position: relative;
+  z-index: 2;
+}
+
+#about a.button {
+  background-color: hsl(0deg 1% 24%);
+  margin-bottom: 2rem;
+}
+
+#about .stats {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+
+  border-radius: 1rem;
+
+  background-color: var(--light-platinum-color);
+
+  position: absolute;
+
+  position: relative;
+
+  top: -15.5rem;
+
+  padding-top: 15rem;
+  padding-bottom: 5rem;
+}
+
+#about .stat {
+  width: 70%;
+  margin-inline: auto;
+}
+
+#about .stat h4 {
+  font-size: 1.9rem;
+  padding-block: 2rem;
+  text-transform: uppercase;
+}
+
+#about .stats .stat + .stat {
+  /* pega um stat que tenha um stat antes dele*/
+  border-top: 1px solid var(--dark-grey-color);
+}
+
+/*******************************SERVIÇOS**************************/
+#services .cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#services .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  background-color: var(--light-platinum-color);
+
+  border-radius: 1rem;
+  padding: 2.4rem;
+  margin-block: 2rem;
+}
+
+/*******************************TESTE**************************/
+
+#projects {
+  padding-top: 15.5rem;
+}
