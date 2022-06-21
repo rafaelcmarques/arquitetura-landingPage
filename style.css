@@ -291,6 +291,7 @@ body.menu-expanded a.button {
 }
 
 #projects .project {
+  padding: 2.4rem;
   border-radius: 1rem;
   background-color: white;
   display: flex;
@@ -299,12 +300,12 @@ body.menu-expanded a.button {
 }
 
 #projects .projectInformations {
-  padding: 2.4rem;
+  padding-inline: 2.4rem;
   text-align: left;
 }
 
 #projects .projectInformations p {
- margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .project {
@@ -318,8 +319,8 @@ body.menu-expanded a.button {
 }
 .slide {
   margin-top: 2rem;
-  width: min(40rem,100%);
-  height: 40rem;
+  width: min(38rem, 100%);
+  height: 38rem;
   overflow: hidden;
   border-radius: 1.5rem;
   transition: all 0.4s;
@@ -331,8 +332,8 @@ body.menu-expanded a.button {
 }
 
 .image img {
-  width: min(40rem,100%);
-  height: 40rem;
+  width: min(38rem, 100%);
+  height: 38rem;
 }
 
 #current {
@@ -358,8 +359,8 @@ body.menu-expanded a.button {
 }
 
 .arrowsBtns {
-  width: min(40rem,100%);
-  height: 40rem;
+  width: min(38rem, 100%);
+  height: 38rem;
 
   position: absolute;
   z-index: 1;
@@ -379,10 +380,11 @@ body.menu-expanded a.button {
 .balls {
   position: absolute;
   z-index: 1;
-  width: min(40rem,100%);
+  width: min(38rem, 100%);
   display: flex;
   justify-content: center;
   bottom: 2rem;
+  padding-left: 1rem;
 }
 
 .balls div {
