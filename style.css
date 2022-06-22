@@ -203,18 +203,26 @@ body.menu-expanded a.button {
   padding-top: calc(4.1rem + var(--nav-height));
 }
 
-#about::after {
+#about::before {
   content: '';
+  height: min(70rem, 100%);
+  width: 100%;
+
+  display: block;
   position: absolute;
-  z-index: -1;
   top: 0;
   left: 0;
-  width: 100%;
-  height: calc(76%);
+  z-index: -1;
   background-color: var(--platinum-color);
 }
 #about p {
   padding-block: 2rem;
+}
+
+#about p,
+#about h2,
+#about h4 {
+  padding-inline: 2.4rem;
 }
 
 #about img {
@@ -335,7 +343,7 @@ body.menu-expanded a.button {
 }
 
 .image img {
-  width: min(50rem, 100%);
+  width: 50rem;
   height: 50rem;
 }
 
