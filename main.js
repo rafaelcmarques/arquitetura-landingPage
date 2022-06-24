@@ -8,6 +8,19 @@ function closeMenu() {
   body.classList.remove('menu-expanded')
 }
 
+function onScroll() {
+  backToTop()
+}
+
+function backToTop() {
+  let topTopButton = document.getElementById('backToTopButton')
+  if (scrollY > 550) {
+    topTopButton.classList.add('show')
+  } else {
+    topTopButton.classList.remove('show')
+  }
+}
+
 /** CARROSSEL DE image **/
 
 let balls = document.querySelector('.balls')
@@ -60,3 +73,10 @@ slide()
 
 /** CARROSSEL DE image **/
 
+ScrollReveal({
+  origin: 'top',
+  distance: '30px',
+  duration: 700
+}).reveal(
+  '#about, #about img, #about .stats, #about .stat, #services, #services header, #services .cards, #services .card, #projects,#projects header, #projects .project, #projects .projectInformations, #contact, #contact header, #contact ul, #contact img, footer, footer img, footer p, footer a '
+)
