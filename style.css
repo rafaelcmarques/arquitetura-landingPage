@@ -26,7 +26,7 @@ body {
 }
 
 body {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-size: 1.6rem; /*16px*/
 
   text-align: center;
@@ -211,7 +211,7 @@ body.menu-expanded a.button {
 }
 
 #about::before {
-  content: '';
+  content: "";
   height: 75rem;
   width: 100%;
 
@@ -440,10 +440,12 @@ body.menu-expanded a.button {
   background-color: var(--platinum-color);
 }
 
-#contact .wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
+#contact .wrapper h2 {
+  margin-bottom: 2.5rem;
+}
+
+#contact header {
+  width: min(40rem, 100%);
 }
 
 #contact .content {
@@ -487,13 +489,10 @@ footer {
   background-color: var(--dark-grey-color);
   color: white;
   flex-direction: column;
-  padding-block: 4rem;
+  padding: 4rem;
 }
 
 footer .wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
   text-align: left;
 }
 
@@ -528,4 +527,180 @@ footer svg path {
 
 #backToTopButton svg circle {
   fill: var(--dark-grey-color);
+}
+
+/***********************RESPONSIVITY**************************/
+
+@media (min-width: 1024px) {
+  /***********************GERAL**************************/
+
+  body {
+    overflow: auto;
+    overflow-x: hidden;
+  }
+  .wrapper {
+    width: min(112rem, 100%);
+    display: grid;
+  }
+
+  .col-a {
+    grid-area: A;
+  }
+
+  .col-b {
+    grid-area: B;
+  }
+
+  section {
+    padding-block: 16rem;
+  }
+
+  section header h2 {
+    font-size: 4rem;
+    line-height: 5.2rem;
+  }
+
+  /***************************** NAVIGATION *****************************/
+  nav#navigation .wrapper * {
+    margin: 0;
+    padding: 0;
+    border: none;
+    visibility: initial;
+    display: initial;
+    opacity: initial;
+    flex-direction: initial;
+    position: initial;
+    font-size: initial;
+    font-weight: initial;
+    transform: initial;
+    color: initial;
+    background-color: initial;
+  }
+
+  nav#navigation .close-menu,
+  nav#navigation .open-menu {
+    display: none;
+  }
+
+  nav#navigation a img {
+    position: initial;
+    width: 13rem;
+  }
+
+  nav#navigation .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+  }
+
+  nav#navigation .menu ul {
+    display: flex;
+  }
+
+  nav#navigation .menu ul li a {
+    color: white;
+  }
+
+  nav#navigation .menu a.button {
+    color: aliceblue;
+    border: 0.1rem solid aliceblue;
+    padding: 1.6rem 3.2rem;
+  }
+
+  /***************************** NAVIGATION *****************************/
+  #about::before {
+    height: 60rem;
+  }
+  #about .stats {
+    flex-direction: row;
+    flex: 1;
+    padding-block: 2rem;
+    position: relative;
+    top: 3rem;
+    width: 113rem;
+  }
+
+  #about .stats .stat + .stat {
+    border-top: none;
+    border-left: 1px solid var(--dark-grey-color);
+  }
+
+  #about .wrapper {
+    grid-template-columns: 60.5rem 1fr;
+    grid-template-areas:
+      "A B"
+      "C C";
+  }
+
+  /***************************** SERVICES *****************************/
+
+  #services .cards {
+    flex-direction: row;
+    flex: content;
+  }
+
+  #services .card {
+    margin-left: 1rem;
+  }
+
+  /***************************** PROJECTS *****************************/
+
+  #projects {
+    padding-top: 0;
+  }
+  #projects .content {
+    flex-direction: row;
+  }
+
+  #projects .slide {
+    margin: 0;
+    width: 50rem;
+  }
+
+  #projects .projectInformations {
+    margin-top: 2rem;
+    height: 50rem;
+  }
+
+  #projects .wrapper {
+    grid-template-columns: 50rem 1fr;
+    grid-template-areas:
+      "C C"
+      "A B";
+  }
+
+  #projects header {
+    width: 110rem;
+  }
+
+  /***************************** CONTACT *****************************/
+
+  #contact {
+    margin-top: 0;
+  }
+  #contact .wrapper {
+    grid-template-columns: 50rem 1fr;
+    grid-template-areas: "A B";
+  }
+
+  /***************************** FOOTER *****************************/
+
+  footer .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "A B";
+  }
+
+  footer .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  footer .content a {
+    display: flex;
+    justify-content: flex-end;
+  }
+  footer p {
+    text-align: right;
+  }
 }
